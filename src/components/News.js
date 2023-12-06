@@ -21,7 +21,7 @@ const News = (props) => {
     let data;
     axios({
         method: 'get',
-        baseURL: 'http://api.mediastack.com',
+        baseURL: 'https://api.mediastack.com',
         url: '/v1/news?access_key=900d6725f420ef69f16d8e0a8b1e3d71'
       }).then(response => {
         console.log(response.data.data);
@@ -59,7 +59,7 @@ const News = (props) => {
   }, []);
 
   const fetchMoreData = async () => {
-    const url = `http://api.mediastack.com/v1/news?access_key=${
+    const url = `https://api.mediastack.com/v1/news?access_key=${
       props.apikey
     }&keywords=tennis&countries=${props.country},gb,de&page=${page + 1}`;
 
